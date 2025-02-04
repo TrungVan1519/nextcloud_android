@@ -69,14 +69,13 @@ public class FeatureFragment extends Fragment implements Injectable {
         if (item.shouldShowImage()) {
             final Drawable image = ResourcesCompat.getDrawable(getResources(), item.getImage(), null);
             if (image != null) {
-                whatsNewImage.setImageDrawable(viewThemeUtils.platform.tintDrawable(requireContext(), image, ColorRole.ON_PRIMARY));
+                whatsNewImage.setImageDrawable(image);
             }
         }
 
         TextView whatsNewTitle = view.findViewById(R.id.whatsNewTitle);
         if (item.shouldShowTitleText()) {
             whatsNewTitle.setText(item.getTitleText());
-            viewThemeUtils.platform.colorTextView(whatsNewTitle, ColorRole.ON_PRIMARY);
             whatsNewTitle.setVisibility(View.VISIBLE);
         } else {
             whatsNewTitle.setVisibility(View.GONE);
@@ -130,7 +129,6 @@ public class FeatureFragment extends Fragment implements Injectable {
         } else {
             textView.setText(text);
         }
-        viewThemeUtils.platform.colorTextView(textView, ColorRole.ON_PRIMARY);
 
         if (!shouldContentCentered) {
             textView.setGravity(Gravity.START);

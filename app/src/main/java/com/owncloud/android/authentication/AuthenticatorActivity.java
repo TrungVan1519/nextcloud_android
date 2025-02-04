@@ -254,7 +254,7 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
 
     private boolean onlyAdd = false;
     @SuppressLint("ResourceAsColor") @ColorInt
-    private int primaryColor = R.color.primary;
+    private int primaryColor = R.color.white;
     private boolean strictMode = false;
 
     private ViewThemeUtils viewThemeUtils;
@@ -272,8 +272,8 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        viewThemeUtils = viewThemeUtilsFactory.withPrimaryAsBackground();
-        viewThemeUtils.platform.colorStatusBar(this, getResources().getColor(R.color.primary));
+//        viewThemeUtils = viewThemeUtilsFactory.withPrimaryAsBackground();
+//        viewThemeUtils.platform.colorStatusBar(this, getResources().getColor(R.color.primary));
 
         // WebViewUtil webViewUtil = new WebViewUtil(this);
 
@@ -359,14 +359,14 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
             } else {
                 showEnforcedServers();
             }
-            
+
             initServerPreFragment(savedInstanceState);
             ProcessLifecycleOwner.get().getLifecycle().addObserver(lifecycleEventObserver);
 
             // webViewUtil.checkWebViewVersion();
         }
     }
-        
+
         private void showEnforcedServers() {
 
             showAuthStatus();
@@ -673,15 +673,8 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
         accountSetupBinding.hostUrlInputHelperText.setText(
             String.format(getString(R.string.login_url_helper_text), getString(R.string.app_name)));
 
-        viewThemeUtils.platform.colorTextView(accountSetupBinding.hostUrlInputHelperText, ColorRole.ON_PRIMARY);
-        viewThemeUtils.platform.colorTextView(accountSetupBinding.serverStatusText, ColorRole.ON_PRIMARY);
-        viewThemeUtils.platform.colorTextView(accountSetupBinding.authStatusText, ColorRole.ON_PRIMARY);
-        viewThemeUtils.material.colorTextInputLayout(accountSetupBinding.hostUrlContainer, ColorRole.ON_PRIMARY);
-        viewThemeUtils.platform.colorEditTextOnPrimary(accountSetupBinding.hostUrlInput);
-
         if (deviceInfo.hasCamera(this)) {
             accountSetupBinding.scanQr.setOnClickListener(v -> onScan());
-            viewThemeUtils.platform.tintDrawable(this, accountSetupBinding.scanQr.getDrawable(), ColorRole.ON_PRIMARY);
         } else {
             accountSetupBinding.scanQr.setVisibility(View.GONE);
         }

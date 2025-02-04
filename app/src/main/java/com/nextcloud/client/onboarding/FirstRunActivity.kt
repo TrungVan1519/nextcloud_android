@@ -72,7 +72,7 @@ class FirstRunActivity : BaseActivity(), Injectable {
 
         super.onCreate(savedInstanceState)
 
-        applyDefaultTheme()
+        // applyDefaultTheme()
 
         binding = FirstRunActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -90,7 +90,7 @@ class FirstRunActivity : BaseActivity(), Injectable {
 
     private fun applyDefaultTheme() {
         defaultViewThemeUtils = viewThemeUtilsFactory?.withPrimaryAsBackground()
-        defaultViewThemeUtils?.platform?.colorStatusBar(this, resources.getColor(R.color.primary))
+        defaultViewThemeUtils?.platform?.colorStatusBar(this, resources.getColor(R.color.white))
     }
 
     private fun registerActivityResult() {
@@ -150,7 +150,7 @@ class FirstRunActivity : BaseActivity(), Injectable {
     }
 
     private fun setupHostOwnServerTextView(isProviderOrOwnInstallationVisible: Boolean) {
-        defaultViewThemeUtils?.platform?.colorTextView(binding.hostOwnServer, ColorRole.ON_PRIMARY)
+        // defaultViewThemeUtils?.platform?.colorTextView(binding.hostOwnServer, ColorRole.ON_PRIMARY)
         binding.hostOwnServer.visibility = if (isProviderOrOwnInstallationVisible) View.VISIBLE else View.GONE
         if (isProviderOrOwnInstallationVisible) {
             binding.hostOwnServer.setOnClickListener {

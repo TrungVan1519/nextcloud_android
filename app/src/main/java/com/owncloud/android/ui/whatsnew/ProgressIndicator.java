@@ -68,7 +68,6 @@ public class ProgressIndicator extends FrameLayout {
         for (int i = 0; i < steps; ++i) {
             ImageView iv = new ImageView(getContext());
             iv.setImageDrawable(ResourcesCompat.getDrawable(getContext().getResources(), R.drawable.whats_new_progress_transition, null));
-            viewThemeUtils.platform.colorImageView(iv, ColorRole.ON_PRIMARY);
             mDotsContainer.addView(iv);
         }
         animateToStep(1);
