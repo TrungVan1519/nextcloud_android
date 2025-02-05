@@ -67,8 +67,8 @@
 
     <!-- Colors -->
     <color name="primary">#EE0033</color>
-    <color name="primary_dark">#006AA3</color>
-    <color name="color_accent">#007cc2</color>
+    <color name="primary_dark">@color/primary</color>
+    <color name="color_accent">@color/primary</color>
     <color name="login_text_color">#ffffff</color>
     <color name="login_text_hint_color">#7fC0E3</color>
 

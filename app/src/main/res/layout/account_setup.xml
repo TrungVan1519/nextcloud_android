@@ -52,6 +52,7 @@
                     app:boxStrokeColor="@color/black"
                     app:hintTextColor="@color/black"
                     app:placeholderTextColor="@color/black"
+                    app:cursorColor="@color/black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/auth_host_url"

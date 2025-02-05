@@ -190,7 +190,6 @@ public final class MimeTypeUtil {
         Drawable drawable = ContextCompat.getDrawable(context, R.drawable.folder);
         assert(drawable != null);
 
-        viewThemeUtils.platform.tintDrawable(context, drawable, ColorRole.PRIMARY);
         return drawable;
     }
 
