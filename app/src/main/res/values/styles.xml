@@ -461,4 +461,8 @@
         <item name="postSplashScreenTheme">@style/Theme.ownCloud.Launcher</item>
     </style>
 
+    <style name="Widget.Material3.Button.TextButton.Icon.Custom" parent="Widget.Material3.Button.TextButton.Icon">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
 </resources>

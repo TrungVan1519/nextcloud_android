@@ -63,11 +63,9 @@ class SortingOrderDialogFragment : DialogFragment(), Injectable {
             view.tag = sortOrder
             view.let {
                 it.setOnClickListener(OnSortOrderClickListener())
-                viewThemeUtils?.material?.colorMaterialButtonPrimaryBorderless(it)
             }
         }
 
-        viewThemeUtils?.material?.colorMaterialButtonPrimaryTonal(binding.cancel)
         binding.cancel.setOnClickListener { dismiss() }
     }
 
@@ -78,7 +76,6 @@ class SortingOrderDialogFragment : DialogFragment(), Injectable {
         val builder = MaterialAlertDialogBuilder(requireContext())
         builder.setView(binding?.root)
 
-        viewThemeUtils?.dialog?.colorMaterialAlertDialogBackground(requireContext(), builder)
 
         return builder.create()
     }

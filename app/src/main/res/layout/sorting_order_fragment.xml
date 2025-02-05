@@ -10,11 +10,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
     android:padding="@dimen/standard_padding">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
         android:orientation="vertical">
 
         <com.google.android.material.textview.MaterialTextView
@@ -28,7 +32,8 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sortByNameAscending"
-            style="@style/Widget.Material3.Button.TextButton.Icon"
+            style="@style/Widget.Material3.Button.TextButton.Icon.Custom"
+            app:iconTint="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center|start"
@@ -38,7 +43,8 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sortByNameDescending"
-            style="@style/Widget.Material3.Button.TextButton.Icon"
+            style="@style/Widget.Material3.Button.TextButton.Icon.Custom"
+            app:iconTint="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center|start"
@@ -48,7 +54,8 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sortByModificationDateDescending"
-            style="@style/Widget.Material3.Button.TextButton.Icon"
+            style="@style/Widget.Material3.Button.TextButton.Icon.Custom"
+            app:iconTint="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center|start"
@@ -58,7 +65,8 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sortByModificationDateAscending"
-            style="@style/Widget.Material3.Button.TextButton.Icon"
+            style="@style/Widget.Material3.Button.TextButton.Icon.Custom"
+            app:iconTint="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center|start"
@@ -68,7 +76,8 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sortBySizeDescending"
-            style="@style/Widget.Material3.Button.TextButton.Icon"
+            style="@style/Widget.Material3.Button.TextButton.Icon.Custom"
+            app:iconTint="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center|start"
@@ -78,7 +87,8 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sortBySizeAscending"
-            style="@style/Widget.Material3.Button.TextButton.Icon"
+            style="@style/Widget.Material3.Button.TextButton.Icon.Custom"
+            app:iconTint="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center|start"
