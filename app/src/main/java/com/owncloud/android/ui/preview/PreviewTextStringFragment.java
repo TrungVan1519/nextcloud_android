@@ -85,7 +85,7 @@ public class PreviewTextStringFragment extends PreviewTextFragment {
         fabMain.setOnClickListener(v -> edit());
 
         fabMain.setImageResource(R.drawable.ic_edit);
-        viewThemeUtils.material.themeFAB(fabMain);
+//        viewThemeUtils.material.themeFAB(fabMain);
 
         return view;
     }

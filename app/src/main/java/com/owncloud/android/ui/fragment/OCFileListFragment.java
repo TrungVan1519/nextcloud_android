@@ -341,7 +341,7 @@ public class OCFileListFragment extends ExtendedListFragment implements
 
         if (mFabMain != null) {
             // is not available in FolderPickerActivity
-            viewThemeUtils.material.themeFAB(mFabMain);
+//            viewThemeUtils.material.themeFAB(mFabMain);
         }
 
         Log_OC.i(TAG, "onCreateView() end");
@@ -519,7 +519,7 @@ public class OCFileListFragment extends ExtendedListFragment implements
 
         if (mFabMain != null) {
             // is not available in FolderPickerActivity
-            viewThemeUtils.material.themeFAB(mFabMain);
+//            viewThemeUtils.material.themeFAB(mFabMain);
             mFabMain.setOnClickListener(v -> {
                 PermissionUtil.requestMediaLocationPermission(activity);
 
@@ -2219,7 +2219,7 @@ public class OCFileListFragment extends ExtendedListFragment implements
             getActivity().runOnUiThread(() -> {
                 if (visible) {
                     mFabMain.show();
-                    viewThemeUtils.material.themeFAB(mFabMain);
+//                    viewThemeUtils.material.themeFAB(mFabMain);
                 } else {
                     mFabMain.hide();
                 }
@@ -2269,10 +2269,10 @@ public class OCFileListFragment extends ExtendedListFragment implements
             getActivity().runOnUiThread(() -> {
                 if (enabled) {
                     mFabMain.setEnabled(true);
-                    viewThemeUtils.material.themeFAB(mFabMain);
+//                    viewThemeUtils.material.themeFAB(mFabMain);
                 } else {
                     mFabMain.setEnabled(false);
-                    viewThemeUtils.material.themeFAB(mFabMain);
+//                    viewThemeUtils.material.themeFAB(mFabMain);
                 }
             });
         }

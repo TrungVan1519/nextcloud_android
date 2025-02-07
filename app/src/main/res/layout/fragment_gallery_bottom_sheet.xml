@@ -40,7 +40,7 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_hide_images"
-                    style="@style/Widget.Material3.Button.IconButton"
+                    style="@style/Widget.Material3.Button.IconButton.Custom"
                     android:layout_width="wrap_content"
                     android:layout_weight="8"
                     android:gravity="start"
@@ -62,7 +62,7 @@
                     android:contentDescription="@null"
                     android:src="@drawable/ic_tick"
                     android:visibility="gone"
-                    app:tint="@color/primary"
+                    app:tint="@color/black"
                     tools:visibility="visible" />
 
 
@@ -76,7 +76,7 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_hide_videos"
-                    style="@style/Widget.Material3.Button.IconButton"
+                    style="@style/Widget.Material3.Button.IconButton.Custom"
                     android:layout_width="wrap_content"
                     android:layout_weight="8"
                     android:gravity="start"
@@ -98,7 +98,7 @@
                     android:contentDescription="@null"
                     android:src="@drawable/ic_tick"
                     android:visibility="gone"
-                    app:tint="@color/primary"
+                    app:tint="@color/black"
                     tools:visibility="visible" />
 
             </LinearLayout>
@@ -111,7 +111,7 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_select_media_folder"
-                    style="@style/Widget.Material3.Button.IconButton"
+                    style="@style/Widget.Material3.Button.IconButton.Custom"
                     android:layout_width="match_parent"
                     android:gravity="start"
                     android:layout_height="wrap_content"

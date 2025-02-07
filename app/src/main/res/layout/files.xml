@@ -52,6 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             app:menu="@menu/bottom_navigation_menu"
+            android:background="@color/light_grey"
             app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton

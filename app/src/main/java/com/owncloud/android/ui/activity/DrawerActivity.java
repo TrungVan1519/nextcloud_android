@@ -240,7 +240,7 @@ public abstract class DrawerActivity extends ToolbarActivity
     }
 
     private void themeBottomNavigationMenu() {
-        viewThemeUtils.platform.colorBottomNavigationView(bottomNavigationView);
+//        viewThemeUtils.platform.colorBottomNavigationView(bottomNavigationView);
     }
 
     @SuppressFBWarnings("RV")

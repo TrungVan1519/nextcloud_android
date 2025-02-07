@@ -45,6 +45,9 @@ import com.owncloud.android.ui.activity.ComponentsGetter
 import com.owncloud.android.utils.DisplayUtils
 import com.owncloud.android.utils.DisplayUtils.AvatarGenerationListener
 import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.vanniktech.ui.Color
+import com.vanniktech.ui.backgroundColor
+import com.vanniktech.ui.tintIcon
 import javax.inject.Inject
 
 class FileActionsBottomSheet : BottomSheetDialogFragment(), Injectable {
@@ -278,12 +281,7 @@ class FileActionsBottomSheet : BottomSheetDialogFragment(), Injectable {
                 }
                 text.setText(action.title)
                 if (action.icon != null) {
-                    val drawable =
-                        viewThemeUtils.platform.tintDrawable(
-                            requireContext(),
-                            AppCompatResources.getDrawable(requireContext(), action.icon)!!
-                        )
-                    icon.setImageDrawable(drawable)
+                    icon.setImageDrawable(AppCompatResources.getDrawable(requireContext(), action.icon)!!)
                 }
             }
         return itemBinding.root

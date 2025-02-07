@@ -29,7 +29,7 @@
         android:layout_width="@dimen/iconized_single_line_item_icon_size"
         android:layout_height="@dimen/iconized_single_line_item_icon_size"
         android:contentDescription="@null"
-        app:tint="@color/primary"
+        app:tint="@color/black"
         tools:src="@drawable/ic_delete" />
 
     <LinearLayout

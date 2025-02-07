@@ -76,7 +76,7 @@ class DocumentScanActivity : ToolbarActivity(), Injectable {
             viewThemeUtils.files.themeActionBar(this, it)
         }
 
-        viewThemeUtils.material.themeFAB(binding.fab)
+        // viewThemeUtils.material.themeFAB(binding.fab)
         binding.fab.setOnClickListener {
             viewModel.onAddPageClicked()
         }
