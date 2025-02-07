@@ -58,21 +58,14 @@ class FirstRunActivity : BaseActivity(), Injectable {
     @Inject
     var onboarding: OnboardingService? = null
 
-    @JvmField
-    @Inject
-    var viewThemeUtilsFactory: ViewThemeUtils.Factory? = null
-
     private var activityResult: ActivityResultLauncher<Intent>? = null
 
     private lateinit var binding: FirstRunActivityBinding
-    private var defaultViewThemeUtils: ViewThemeUtils? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         enableAccountHandling = false
 
         super.onCreate(savedInstanceState)
-
-        applyDefaultTheme()
 
         binding = FirstRunActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -86,11 +79,6 @@ class FirstRunActivity : BaseActivity(), Injectable {
         deleteAccountAtFirstLaunch()
         setupFeaturesViewAdapter()
         handleOnBackPressed()
-    }
-
-    private fun applyDefaultTheme() {
-        defaultViewThemeUtils = viewThemeUtilsFactory?.withPrimaryAsBackground()
-        defaultViewThemeUtils?.platform?.colorStatusBar(this, resources.getColor(R.color.primary))
     }
 
     private fun registerActivityResult() {
@@ -117,7 +105,6 @@ class FirstRunActivity : BaseActivity(), Injectable {
     }
 
     private fun setupLoginButton() {
-        defaultViewThemeUtils?.material?.colorMaterialButtonFilledOnPrimary(binding.login)
         binding.login.setOnClickListener {
             if (intent.getBooleanExtra(EXTRA_ALLOW_CLOSE, false)) {
                 val authenticatorActivityIntent = getAuthenticatorActivityIntent(false)
@@ -129,7 +116,6 @@ class FirstRunActivity : BaseActivity(), Injectable {
     }
 
     private fun setupSignupButton(isProviderOrOwnInstallationVisible: Boolean) {
-        defaultViewThemeUtils?.material?.colorMaterialButtonOutlinedOnPrimary(binding.signup)
         binding.signup.visibility = if (isProviderOrOwnInstallationVisible) View.VISIBLE else View.GONE
         binding.signup.setOnClickListener {
             val authenticatorActivityIntent = getAuthenticatorActivityIntent(true)
@@ -150,7 +136,6 @@ class FirstRunActivity : BaseActivity(), Injectable {
     }
 
     private fun setupHostOwnServerTextView(isProviderOrOwnInstallationVisible: Boolean) {
-        defaultViewThemeUtils?.platform?.colorTextView(binding.hostOwnServer, ColorRole.ON_PRIMARY)
         binding.hostOwnServer.visibility = if (isProviderOrOwnInstallationVisible) View.VISIBLE else View.GONE
         if (isProviderOrOwnInstallationVisible) {
             binding.hostOwnServer.setOnClickListener {
