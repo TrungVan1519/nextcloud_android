@@ -56,7 +56,11 @@
                     app:endIconContentDescription="@string/test_server_button"
                     app:endIconDrawable="@drawable/arrow_right"
                     app:endIconMode="custom"
-                    app:endIconTint="@color/login_text_color">
+                    app:placeholderTextColor="@color/black"
+                    app:boxStrokeColor="@color/black"
+                    app:hintTextColor="@color/black"
+                    app:cursorColor="@color/black"
+                    app:endIconTint="@color/black">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/host_url_input"
@@ -69,7 +73,8 @@
                         android:paddingStart="@dimen/standard_padding"
                         android:paddingEnd="@dimen/alternate_padding_right"
                         android:scrollbars="vertical"
-                        android:textColor="@color/login_text_color">
+                        android:text="https://vera.se.tab.digital/"
+                        android:textColor="@color/black">
 
                         <requestFocus />
 
@@ -83,9 +88,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:foregroundTint="#FFFFFF"
+                android:foregroundTint="@color/black"
                 android:spinnerMode="dialog"
-                android:textColor="@color/white_helper_text"
+                android:textColor="@color/black"
                 android:visibility="gone" />
 
             <TextView
@@ -98,7 +103,7 @@
                 android:paddingEnd="@dimen/standard_half_padding"
                 android:paddingBottom="@dimen/standard_eight_padding"
                 android:text="@string/login_url_helper_text"
-                android:textColor="@color/white_helper_text" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/server_status_text"
@@ -113,7 +118,7 @@
                 android:paddingEnd="@dimen/standard_eight_padding"
                 android:paddingBottom="@dimen/standard_eight_padding"
                 android:text="@string/auth_testing_connection"
-                android:textColor="@color/login_text_color"
+                android:textColor="@color/black"
                 android:visibility="invisible"
                 app:drawableStartCompat="@android:drawable/stat_notify_sync" />
 
@@ -129,7 +134,7 @@
                 android:paddingEnd="@dimen/standard_eight_padding"
                 android:paddingBottom="@dimen/standard_eight_padding"
                 android:text="@string/auth_unauthorized"
-                android:textColor="@color/login_text_color"
+                android:textColor="@color/design_default_color_error"
                 app:drawableStartCompat="@android:drawable/stat_notify_sync" />
 
             <ImageButton

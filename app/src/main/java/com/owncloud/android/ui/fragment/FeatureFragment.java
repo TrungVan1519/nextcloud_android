@@ -20,14 +20,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.nextcloud.android.common.ui.theme.utils.ColorRole;
 import com.nextcloud.client.di.Injectable;
 import com.nextcloud.utils.extensions.BundleExtensionsKt;
 import com.owncloud.android.R;
 import com.owncloud.android.features.FeatureItem;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
-
-import javax.inject.Inject;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -36,8 +32,6 @@ import androidx.fragment.app.Fragment;
 
 public class FeatureFragment extends Fragment implements Injectable {
     private FeatureItem item;
-    @Inject ViewThemeUtils.Factory viewThemeUtilsFactory;
-    private ViewThemeUtils viewThemeUtils;
 
     static public FeatureFragment newInstance(FeatureItem item) {
         FeatureFragment f = new FeatureFragment();
@@ -49,7 +43,6 @@ public class FeatureFragment extends Fragment implements Injectable {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        viewThemeUtils = viewThemeUtilsFactory.withPrimaryAsBackground();
         super.onCreate(savedInstanceState);
 
         Bundle bundle = getArguments();
@@ -69,14 +62,13 @@ public class FeatureFragment extends Fragment implements Injectable {
         if (item.shouldShowImage()) {
             final Drawable image = ResourcesCompat.getDrawable(getResources(), item.getImage(), null);
             if (image != null) {
-                whatsNewImage.setImageDrawable(viewThemeUtils.platform.tintDrawable(requireContext(), image, ColorRole.ON_PRIMARY));
+                whatsNewImage.setImageDrawable(image);
             }
         }
 
         TextView whatsNewTitle = view.findViewById(R.id.whatsNewTitle);
         if (item.shouldShowTitleText()) {
             whatsNewTitle.setText(item.getTitleText());
-            viewThemeUtils.platform.colorTextView(whatsNewTitle, ColorRole.ON_PRIMARY);
             whatsNewTitle.setVisibility(View.VISIBLE);
         } else {
             whatsNewTitle.setVisibility(View.GONE);
@@ -130,7 +122,6 @@ public class FeatureFragment extends Fragment implements Injectable {
         } else {
             textView.setText(text);
         }
-        viewThemeUtils.platform.colorTextView(textView, ColorRole.ON_PRIMARY);
 
         if (!shouldContentCentered) {
             textView.setGravity(Gravity.START);

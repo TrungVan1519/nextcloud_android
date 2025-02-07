@@ -58,7 +58,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import com.nextcloud.android.common.ui.color.ColorUtil;
-import com.nextcloud.android.common.ui.theme.utils.ColorRole;
 import com.nextcloud.client.account.User;
 import com.nextcloud.client.account.UserAccountManager;
 import com.nextcloud.client.device.DeviceInfo;
@@ -114,7 +113,6 @@ import com.owncloud.android.utils.ErrorMessageAdapter;
 import com.owncloud.android.utils.PermissionUtil;
 import com.owncloud.android.utils.WebViewUtil;
 import com.owncloud.android.utils.theme.CapabilityUtils;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
 
 import org.json.JSONObject;
 
@@ -246,7 +244,6 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
     @Inject OnboardingService onboarding;
     @Inject DeviceInfo deviceInfo;
     @Inject PassCodeManager passCodeManager;
-    @Inject ViewThemeUtils.Factory viewThemeUtilsFactory;
     @Inject ColorUtil colorUtil;
     @Inject ClientFactory clientFactory;
 
@@ -254,10 +251,8 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
 
     private boolean onlyAdd = false;
     @SuppressLint("ResourceAsColor") @ColorInt
-    private int primaryColor = R.color.primary;
+    private int primaryColor = R.color.white;
     private boolean strictMode = false;
-
-    private ViewThemeUtils viewThemeUtils;
 
     @VisibleForTesting
     public AccountSetupBinding getAccountSetupBinding() {
@@ -272,10 +267,6 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        viewThemeUtils = viewThemeUtilsFactory.withPrimaryAsBackground();
-        viewThemeUtils.platform.colorStatusBar(this, getResources().getColor(R.color.primary));
-
-        // WebViewUtil webViewUtil = new WebViewUtil(this);
 
         Uri data = getIntent().getData();
         boolean directLogin = data != null && data.toString().startsWith(getString(R.string.login_data_own_scheme));
@@ -497,7 +488,6 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
     @SuppressFBWarnings("ANDROID_WEB_VIEW_JAVASCRIPT")
     @SuppressLint("SetJavaScriptEnabled")
     private void initWebViewLogin(String baseURL, boolean useGenericUserAgent) {
-        viewThemeUtils.platform.colorCircularProgressBar(accountSetupWebviewBinding.loginWebviewProgressBar, ColorRole.ON_PRIMARY_CONTAINER);
         accountSetupWebviewBinding.loginWebview.setVisibility(View.GONE);
         new WebViewUtil(this).setProxyKKPlus(accountSetupWebviewBinding.loginWebview);
 
@@ -580,10 +570,8 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
                 accountSetupWebviewBinding.loginWebview.setVisibility(View.VISIBLE);
 
                 if (mServerInfo.mVersion != null && mServerInfo.mVersion.isOlderThan(NextcloudVersion.nextcloud_25)) {
-                    viewThemeUtils.platform.colorStatusBar(AuthenticatorActivity.this, primaryColor);
                     getWindow().setNavigationBarColor(primaryColor);
                 } else {
-                    viewThemeUtils.platform.resetStatusBar(AuthenticatorActivity.this);
                     getWindow().setNavigationBarColor(ContextCompat.getColor(AuthenticatorActivity.this, R.color.bg_default));
                 }
             }
@@ -673,15 +661,8 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
         accountSetupBinding.hostUrlInputHelperText.setText(
             String.format(getString(R.string.login_url_helper_text), getString(R.string.app_name)));
 
-        viewThemeUtils.platform.colorTextView(accountSetupBinding.hostUrlInputHelperText, ColorRole.ON_PRIMARY);
-        viewThemeUtils.platform.colorTextView(accountSetupBinding.serverStatusText, ColorRole.ON_PRIMARY);
-        viewThemeUtils.platform.colorTextView(accountSetupBinding.authStatusText, ColorRole.ON_PRIMARY);
-        viewThemeUtils.material.colorTextInputLayout(accountSetupBinding.hostUrlContainer, ColorRole.ON_PRIMARY);
-        viewThemeUtils.platform.colorEditTextOnPrimary(accountSetupBinding.hostUrlInput);
-
         if (deviceInfo.hasCamera(this)) {
             accountSetupBinding.scanQr.setOnClickListener(v -> onScan());
-            viewThemeUtils.platform.tintDrawable(this, accountSetupBinding.scanQr.getDrawable(), ColorRole.ON_PRIMARY);
         } else {
             accountSetupBinding.scanQr.setVisibility(View.GONE);
         }

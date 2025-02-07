@@ -20,12 +20,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.nextcloud.android.common.ui.theme.utils.ColorRole;
 import com.owncloud.android.MainApp;
 import com.owncloud.android.R;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
-
-import javax.inject.Inject;
 
 import androidx.core.content.res.ResourcesCompat;
 
@@ -38,9 +34,6 @@ public class ProgressIndicator extends FrameLayout {
 
     protected int mNumberOfSteps = -1;
     protected int mCurrentStep = -1;
-
-    @Inject ViewThemeUtils.Factory viewThemeUtilsFactory;
-    private ViewThemeUtils viewThemeUtils;
 
     public ProgressIndicator(Context context) {
         super(context);
@@ -68,7 +61,6 @@ public class ProgressIndicator extends FrameLayout {
         for (int i = 0; i < steps; ++i) {
             ImageView iv = new ImageView(getContext());
             iv.setImageDrawable(ResourcesCompat.getDrawable(getContext().getResources(), R.drawable.whats_new_progress_transition, null));
-            viewThemeUtils.platform.colorImageView(iv, ColorRole.ON_PRIMARY);
             mDotsContainer.addView(iv);
         }
         animateToStep(1);
@@ -93,7 +85,6 @@ public class ProgressIndicator extends FrameLayout {
 
     private void setup() {
         MainApp.getAppComponent().inject(this);
-        viewThemeUtils = viewThemeUtilsFactory.withPrimaryAsBackground();
         mDotsContainer = new LinearLayout(getContext());
         mDotsContainer.setGravity(Gravity.CENTER);
         FrameLayout.LayoutParams params = generateDefaultLayoutParams();
