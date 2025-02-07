@@ -10,7 +10,7 @@
     android:viewportWidth="960"
     android:viewportHeight="960">
     <path
-        android:fillColor="#ff757575"
+        android:fillColor="@color/black"
         android:pathData="M160,720Q127,720 103.5,696.5Q80,673 80,640L80,160Q80,127 103.5,103.5Q127,80 160,80L800,80Q833,80 856.5,103.5Q880,127 880,160L880,880L720,720L160,720Z"
         android:strokeWidth="36"
         android:strokeColor="#FFFFFFFF" />

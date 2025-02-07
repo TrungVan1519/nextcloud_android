@@ -11,7 +11,7 @@
     android:viewportWidth="4.233333"
     android:viewportHeight="4.2333336">
     <path
-        android:fillColor="#d40000"
+        android:fillColor="@color/design_default_color_error"
         android:pathData="M2.1167,2.11002m-2.1167,0a2.1167,2.1167 0,1 1,4.2334 0a2.1167,2.1167 0,1 1,-4.2334 0"
         android:strokeWidth=".25066" />
     <path
