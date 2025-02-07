@@ -419,6 +419,10 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="Widget.Material3.Button.TextButton.Icon.Custom" parent="Widget.Material3.Button.TextButton.Icon">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
     <style name="Widget.Nextcloud.AppWidget.Container" parent="android:Widget">
         <item name="android:id">@android:id/background</item>
         <item name="android:background">?android:attr/colorBackground</item>

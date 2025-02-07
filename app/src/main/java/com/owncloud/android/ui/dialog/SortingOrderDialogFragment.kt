@@ -19,8 +19,6 @@ import com.owncloud.android.R
 import com.owncloud.android.databinding.SortingOrderFragmentBinding
 import com.owncloud.android.lib.common.utils.Log_OC
 import com.owncloud.android.utils.FileSortOrder
-import com.owncloud.android.utils.theme.ViewThemeUtils
-import javax.inject.Inject
 
 /**
  * Dialog to show and choose the sorting order for the file listing.
@@ -30,10 +28,6 @@ class SortingOrderDialogFragment : DialogFragment(), Injectable {
     private var binding: SortingOrderFragmentBinding? = null
 
     private var currentSortOrderName: String? = null
-
-    @JvmField
-    @Inject
-    var viewThemeUtils: ViewThemeUtils? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,11 +57,9 @@ class SortingOrderDialogFragment : DialogFragment(), Injectable {
             view.tag = sortOrder
             view.let {
                 it.setOnClickListener(OnSortOrderClickListener())
-                viewThemeUtils?.material?.colorMaterialButtonPrimaryBorderless(it)
             }
         }
 
-        viewThemeUtils?.material?.colorMaterialButtonPrimaryTonal(binding.cancel)
         binding.cancel.setOnClickListener { dismiss() }
     }
 
@@ -77,8 +69,6 @@ class SortingOrderDialogFragment : DialogFragment(), Injectable {
 
         val builder = MaterialAlertDialogBuilder(requireContext())
         builder.setView(binding?.root)
-
-        viewThemeUtils?.dialog?.colorMaterialAlertDialogBackground(requireContext(), builder)
 
         return builder.create()
     }

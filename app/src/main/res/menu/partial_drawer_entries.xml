@@ -83,14 +83,6 @@
     </group>
 
     <!--
-     all items in this group MUST have orderInCategory="3" set
-   -->
-    <group
-        android:id="@+id/drawer_menu_external_links"
-        android:checkableBehavior="single">
-    </group>
-
-    <!--
       all items in this group MUST have orderInCategory="4" set
     -->
     <group

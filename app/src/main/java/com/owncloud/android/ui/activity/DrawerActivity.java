@@ -351,7 +351,6 @@ public abstract class DrawerActivity extends ToolbarActivity
     }
 
     public void updateHeader() {
-        int primaryColor = themeColorUtils.unchangedPrimaryColor(getAccount(), this);
         boolean isClientBranded = getResources().getBoolean(R.bool.is_branded_client);
 
         if (getAccount() != null &&
@@ -359,10 +358,6 @@ public abstract class DrawerActivity extends ToolbarActivity
 
             OCCapability capability = getCapabilities();
             String logo = capability.getServerLogo();
-
-            // set background to primary color
-            LinearLayout drawerHeader = mNavigationViewHeader.findViewById(R.id.drawer_header_view);
-            drawerHeader.setBackgroundColor(primaryColor);
 
             if (!TextUtils.isEmpty(logo) && URLUtil.isValidUrl(logo)) {
                 // background image
@@ -379,21 +374,6 @@ public abstract class DrawerActivity extends ToolbarActivity
                 SimpleTarget<Bitmap> target = new SimpleTarget<>() {
                     @Override
                     public void onResourceReady(Bitmap resource, GlideAnimation glideAnimation) {
-
-                        Bitmap logo = resource;
-                        int width = resource.getWidth();
-                        int height = resource.getHeight();
-                        int max = Math.max(width, height);
-                        if (max > MAX_LOGO_SIZE_PX) {
-                            logo = BitmapUtils.scaleBitmap(resource, MAX_LOGO_SIZE_PX, width, height, max);
-                        }
-
-                        Drawable[] drawables = {new ColorDrawable(primaryColor),
-                            new BitmapDrawable(getResources(), logo)};
-                        LayerDrawable layerDrawable = new LayerDrawable(drawables);
-
-                        String name = capability.getServerName();
-                        setDrawerHeaderLogo(layerDrawable, name);
                     }
                 };
 
@@ -402,16 +382,6 @@ public abstract class DrawerActivity extends ToolbarActivity
                     .load(Uri.parse(logo))
                     .into(target);
             }
-        }
-
-        // hide ecosystem apps according to user preference or in branded client
-        LinearLayout banner = mNavigationViewHeader.findViewById(R.id.drawer_ecosystem_apps);
-        boolean shouldHideTopBanner = isClientBranded || !preferences.isShowEcosystemApps();
-
-        if (shouldHideTopBanner) {
-            hideTopBanner(banner);
-        } else {
-            showTopBanner(banner, primaryColor);
         }
     }
 
@@ -943,7 +913,6 @@ public abstract class DrawerActivity extends ToolbarActivity
             MenuItem menuItem = drawerNavigationView.getMenu().findItem(menuItemId);
 
             if (menuItem != null && !menuItem.isChecked()) {
-                viewThemeUtils.platform.colorNavigationView(drawerNavigationView);
                 menuItem.setChecked(true);
             }
         }
@@ -1027,37 +996,6 @@ public abstract class DrawerActivity extends ToolbarActivity
     }
 
     private void updateExternalLinksInDrawer() {
-        if (drawerNavigationView != null && MDMConfig.INSTANCE.externalSiteSupport(this)) {
-            drawerNavigationView.getMenu().removeGroup(R.id.drawer_menu_external_links);
-
-            int greyColor = ContextCompat.getColor(this, R.color.drawer_menu_icon);
-
-            for (final ExternalLink link : externalLinksProvider.getExternalLink(ExternalLinkType.LINK)) {
-                int id = drawerNavigationView.getMenu().add(R.id.drawer_menu_external_links,
-                                                            MENU_ITEM_EXTERNAL_LINK + link.getId(), MENU_ORDER_EXTERNAL_LINKS, link.getName())
-                    .setCheckable(true).getItemId();
-
-                MenuSimpleTarget target = new MenuSimpleTarget<Drawable>(id) {
-                    @Override
-                    public void onResourceReady(Drawable resource, GlideAnimation glideAnimation) {
-                        setExternalLinkIcon(getIdMenuItem(), resource, greyColor);
-                    }
-
-                    @Override
-                    public void onLoadFailed(Exception e, Drawable errorDrawable) {
-                        super.onLoadFailed(e, errorDrawable);
-                        setExternalLinkIcon(getIdMenuItem(), errorDrawable, greyColor);
-                    }
-                };
-
-                DisplayUtils.downloadIcon(getUserAccountManager(),
-                                          clientFactory,
-                                          this,
-                                          link.getIconUrl(),
-                                          target,
-                                          R.drawable.ic_link);
-            }
-        }
     }
 
     private void setExternalLinkIcon(int id, Drawable drawable, int greyColor) {
