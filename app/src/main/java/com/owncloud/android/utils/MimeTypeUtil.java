@@ -102,10 +102,6 @@ public final class MimeTypeUtil {
                 return null;
             }
 
-            if (R.drawable.file_zip == iconId) {
-                viewThemeUtils.platform.tintDrawable(context, icon, ColorRole.PRIMARY);
-            }
-
             return icon;
         } else {
             return null;
@@ -121,10 +117,6 @@ public final class MimeTypeUtil {
 
         Drawable result = ContextCompat.getDrawable(context, iconId);
         if (result == null) return null;
-
-        if (R.drawable.file_zip == iconId) {
-            viewThemeUtils.platform.tintDrawable(context, result, ColorRole.PRIMARY);
-        }
 
         return result;
     }
@@ -190,7 +182,6 @@ public final class MimeTypeUtil {
         Drawable drawable = ContextCompat.getDrawable(context, R.drawable.folder);
         assert(drawable != null);
 
-        viewThemeUtils.platform.tintDrawable(context, drawable, ColorRole.PRIMARY);
         return drawable;
     }
 
