@@ -233,14 +233,9 @@ public abstract class DrawerActivity extends ToolbarActivity
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         if (bottomNavigationView != null) {
-            themeBottomNavigationMenu();
             checkAssistantBottomNavigationMenu();
             handleBottomNavigationViewClicks();
         }
-    }
-
-    private void themeBottomNavigationMenu() {
-        viewThemeUtils.platform.colorBottomNavigationView(bottomNavigationView);
     }
 
     @SuppressFBWarnings("RV")

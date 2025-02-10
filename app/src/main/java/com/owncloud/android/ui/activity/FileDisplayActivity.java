@@ -391,6 +391,7 @@ public class FileDisplayActivity extends FileActivity
         // Inflate and set the layout view
         binding = FilesBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
     }
 
     private void initUI() {

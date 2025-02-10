@@ -465,4 +465,10 @@
         <item name="postSplashScreenTheme">@style/Theme.ownCloud.Launcher</item>
     </style>
 
+    <style name="Widget.Design.BottomNavigationView.Custom" parent="Widget.Design.BottomNavigationView">
+        <item name="itemBackground">@color/bottom_nav_background_color</item> <!-- Use the ColorStateList -->
+        <item name="itemIconTint">@color/bottom_nav_icon_color</item> <!-- Optional: Icon tint -->
+        <item name="itemTextColor">@color/bottom_nav_text_color</item> <!-- Optional: Text color -->
+    </style>
+
 </resources>

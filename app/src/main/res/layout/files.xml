@@ -46,6 +46,7 @@
         </LinearLayout>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
+            style="@style/Widget.Design.BottomNavigationView.Custom"
             android:id="@+id/bottom_navigation"
             app:labelVisibilityMode="labeled"
             android:layout_width="match_parent"
