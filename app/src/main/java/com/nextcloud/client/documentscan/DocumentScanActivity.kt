@@ -7,6 +7,7 @@
  */
 package com.nextcloud.client.documentscan
 
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -76,7 +77,8 @@ class DocumentScanActivity : ToolbarActivity(), Injectable {
             viewThemeUtils.files.themeActionBar(this, it)
         }
 
-        viewThemeUtils.material.themeFAB(binding.fab)
+        binding.fab.backgroundTintList = ColorStateList.valueOf(getColor(R.color.primary))
+        binding.fab.imageTintList = ColorStateList.valueOf(getColor(R.color.white))
         binding.fab.setOnClickListener {
             viewModel.onAddPageClicked()
         }

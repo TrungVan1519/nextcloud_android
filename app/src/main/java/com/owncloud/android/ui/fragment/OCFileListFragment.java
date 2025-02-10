@@ -19,6 +19,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -341,7 +342,8 @@ public class OCFileListFragment extends ExtendedListFragment implements
 
         if (mFabMain != null) {
             // is not available in FolderPickerActivity
-            viewThemeUtils.material.themeFAB(mFabMain);
+            mFabMain.setBackgroundTintList(ColorStateList.valueOf(requireContext().getColor(R.color.primary)));
+            mFabMain.setImageTintList(ColorStateList.valueOf(requireContext().getColor(R.color.white)));
         }
 
         Log_OC.i(TAG, "onCreateView() end");
@@ -519,7 +521,8 @@ public class OCFileListFragment extends ExtendedListFragment implements
 
         if (mFabMain != null) {
             // is not available in FolderPickerActivity
-            viewThemeUtils.material.themeFAB(mFabMain);
+            mFabMain.setBackgroundTintList(ColorStateList.valueOf(requireContext().getColor(R.color.primary)));
+            mFabMain.setImageTintList(ColorStateList.valueOf(requireContext().getColor(R.color.white)));
             mFabMain.setOnClickListener(v -> {
                 PermissionUtil.requestMediaLocationPermission(activity);
 
@@ -2219,7 +2222,8 @@ public class OCFileListFragment extends ExtendedListFragment implements
             getActivity().runOnUiThread(() -> {
                 if (visible) {
                     mFabMain.show();
-                    viewThemeUtils.material.themeFAB(mFabMain);
+                    mFabMain.setBackgroundTintList(ColorStateList.valueOf(requireContext().getColor(R.color.primary)));
+                    mFabMain.setImageTintList(ColorStateList.valueOf(requireContext().getColor(R.color.white)));
                 } else {
                     mFabMain.hide();
                 }
@@ -2269,10 +2273,12 @@ public class OCFileListFragment extends ExtendedListFragment implements
             getActivity().runOnUiThread(() -> {
                 if (enabled) {
                     mFabMain.setEnabled(true);
-                    viewThemeUtils.material.themeFAB(mFabMain);
+                    mFabMain.setBackgroundTintList(ColorStateList.valueOf(requireContext().getColor(R.color.primary)));
+                    mFabMain.setImageTintList(ColorStateList.valueOf(requireContext().getColor(R.color.white)));
                 } else {
                     mFabMain.setEnabled(false);
-                    viewThemeUtils.material.themeFAB(mFabMain);
+                    mFabMain.setBackgroundTintList(ColorStateList.valueOf(requireContext().getColor(R.color.primary)));
+                    mFabMain.setImageTintList(ColorStateList.valueOf(requireContext().getColor(R.color.white)));
                 }
             });
         }

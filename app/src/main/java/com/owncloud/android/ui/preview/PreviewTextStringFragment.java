@@ -7,6 +7,7 @@
  */
 package com.owncloud.android.ui.preview;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -85,7 +86,8 @@ public class PreviewTextStringFragment extends PreviewTextFragment {
         fabMain.setOnClickListener(v -> edit());
 
         fabMain.setImageResource(R.drawable.ic_edit);
-        viewThemeUtils.material.themeFAB(fabMain);
+        fabMain.setBackgroundTintList(ColorStateList.valueOf(requireContext().getColor(R.color.primary)));
+        fabMain.setImageTintList(ColorStateList.valueOf(requireContext().getColor(R.color.white)));
 
         return view;
     }
