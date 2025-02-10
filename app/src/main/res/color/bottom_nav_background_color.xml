@@ -7,6 +7,6 @@
   -->
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_checked="true" android:color="@color/white" /> <!-- Selected item background color -->
-    <item android:color="@color/white" /> <!-- Default background color -->
+    <item android:state_checked="true" android:color="@color/grey_200" /> <!-- Selected item background color -->
+    <item android:color="@color/grey_200" /> <!-- Default background color -->
 </selector>

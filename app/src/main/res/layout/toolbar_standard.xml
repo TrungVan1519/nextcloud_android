@@ -162,11 +162,12 @@
             android:visibility="gone"
             app:background="@color/appbar"
             app:cardCornerRadius="25dp"
-            app:cardElevation="2dp"
+            app:cardElevation="1dp"
             app:strokeWidth="0dp"
             tools:visibility="visible">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:background="@drawable/background_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 

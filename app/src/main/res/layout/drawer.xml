@@ -11,15 +11,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <com.google.android.material.navigation.NavigationView
+        style="@style/Widget.Design.NavigationView.Custom"
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:layout_weight="1"
-        android:background="@color/appbar"
-        android:theme="@style/NavigationView_ItemTextAppearance"
         app:headerLayout="@layout/drawer_header"
-        app:itemTextColor="@color/drawer_text_color"
         app:menu="@menu/partial_drawer_entries">
 
         <LinearLayout

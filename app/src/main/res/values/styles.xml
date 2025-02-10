@@ -253,7 +253,7 @@
 
     <!-- Launch screen -->
     <style name="Theme.ownCloud.Launcher">
-        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/white</item>
         <item name="android:navigationBarColor">@color/white</item>
         <item name="android:windowBackground">@color/white</item>
         <item name="android:textColorHint">@color/secondary_text_color</item>
@@ -467,6 +467,12 @@
 
     <style name="Widget.Design.BottomNavigationView.Custom" parent="Widget.Design.BottomNavigationView">
         <item name="itemBackground">@color/bottom_nav_background_color</item> <!-- Use the ColorStateList -->
+        <item name="itemIconTint">@color/bottom_nav_icon_color</item> <!-- Optional: Icon tint -->
+        <item name="itemTextColor">@color/bottom_nav_text_color</item> <!-- Optional: Text color -->
+    </style>
+
+    <style name="Widget.Design.NavigationView.Custom" parent="Widget.Design.NavigationView">
+        <item name="itemBackground">@color/white</item> <!-- Use the ColorStateList -->
         <item name="itemIconTint">@color/bottom_nav_icon_color</item> <!-- Optional: Icon tint -->
         <item name="itemTextColor">@color/bottom_nav_text_color</item> <!-- Optional: Text color -->
     </style>

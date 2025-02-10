@@ -45,4 +45,10 @@
         <item name="itemTextColor">@color/bottom_nav_text_color</item> <!-- Optional: Text color -->
     </style>
 
+    <style name="Widget.Design.NavigationView.Custom" parent="Widget.Design.NavigationView">
+        <item name="itemBackground">@color/white</item> <!-- Use the ColorStateList -->
+        <item name="itemIconTint">@color/bottom_nav_icon_color</item> <!-- Optional: Icon tint -->
+        <item name="itemTextColor">@color/bottom_nav_text_color</item> <!-- Optional: Text color -->
+    </style>
+
 </resources>
