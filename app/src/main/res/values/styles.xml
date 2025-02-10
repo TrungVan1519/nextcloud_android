@@ -105,7 +105,7 @@
     <style name="Theme.ownCloud.Toolbar" parent="Theme.ownCloud.ToolbarBase" />
 
     <style name="Theme.ownCloud.Toolbar.DrawerBase" parent="Theme.ownCloud.Toolbar">
-        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/black</item>
     </style>
 
     <style name="Theme.ownCloud.Toolbar.Drawer" parent="Theme.ownCloud.Toolbar.DrawerBase">

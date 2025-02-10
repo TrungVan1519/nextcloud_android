@@ -100,11 +100,6 @@ public abstract class ToolbarActivity extends BaseActivity implements Injectable
         mPreviewImageContainer = findViewById(R.id.preview_image_frame);
 
         mToolbarSpinner = findViewById(R.id.toolbar_spinner);
-
-        viewThemeUtils.material.themeToolbar(mToolbar);
-        viewThemeUtils.material.colorToolbarOverflowIcon(mToolbar);
-        viewThemeUtils.platform.themeStatusBar(this);
-        viewThemeUtils.material.colorMaterialTextButton(mSwitchAccountButton);
     }
 
     public void setupToolbarShowOnlyMenuButtonAndTitle(String title, View.OnClickListener toggleDrawer) {
@@ -169,19 +164,14 @@ public abstract class ToolbarActivity extends BaseActivity implements Injectable
 
     @SuppressLint("PrivateResource")
     private void showHomeSearchToolbar(boolean isShow) {
-        viewThemeUtils.material.themeToolbar(mToolbar);
         if (isShow) {
-            viewThemeUtils.platform.resetStatusBar(this);
             mAppBar.setStateListAnimator(AnimatorInflater.loadStateListAnimator(mAppBar.getContext(),
                                                                                 R.animator.appbar_elevation_off));
             mDefaultToolbar.setVisibility(View.GONE);
             mHomeSearchToolbar.setVisibility(View.VISIBLE);
-            viewThemeUtils.material.themeCardView(mHomeSearchToolbar);
-            viewThemeUtils.material.themeSearchBarText(mSearchText);
         } else {
             mAppBar.setStateListAnimator(AnimatorInflater.loadStateListAnimator(mAppBar.getContext(),
                                                                                 R.animator.appbar_elevation_on));
-            viewThemeUtils.platform.themeStatusBar(this);
             mDefaultToolbar.setVisibility(View.VISIBLE);
             mHomeSearchToolbar.setVisibility(View.GONE);
         }
@@ -299,7 +289,6 @@ public abstract class ToolbarActivity extends BaseActivity implements Injectable
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setSubtitle(subtitle);
-            viewThemeUtils.androidx.themeActionBarSubtitle(this, actionBar);
         }
     }
 
