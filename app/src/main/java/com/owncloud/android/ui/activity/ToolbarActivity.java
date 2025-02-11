@@ -161,7 +161,7 @@ public abstract class ToolbarActivity extends BaseActivity implements Injectable
 
     private void showHomeSearchToolbar(String title, boolean isRoot) {
         showHomeSearchToolbar(isHomeSearchToolbarShow && isRoot);
-        mSearchText.setText(getString(R.string.appbar_search_in, title));
+        mSearchText.setText(getString(R.string.appbar_search_in, "VOffice"));
     }
 
     @SuppressLint("PrivateResource")

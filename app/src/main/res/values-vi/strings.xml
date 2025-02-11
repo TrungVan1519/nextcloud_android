@@ -217,6 +217,7 @@
     <string name="drawer_header_background">Hình nền của thanh tiêu đề</string>
     <string name="drawer_item_activities">Hoạt động</string>
     <string name="drawer_item_all_files">Tất cả tệp tin</string>
+    <string name="drawer_item_personal_files">Tệp tin cá nhân</string>
     <string name="drawer_item_favorites">Ưa thích</string>
     <string name="drawer_item_gallery">Phương tiện</string>
     <string name="drawer_item_home">Trang nhất</string>
@@ -224,7 +225,7 @@
     <string name="drawer_item_on_device">Trên thiết bị</string>
     <string name="drawer_item_recently_modified">Mới sửa</string>
     <string name="drawer_item_shared">Chia sẻ</string>
-    <string name="drawer_item_trashbin">File đã bị xóa</string>
+    <string name="drawer_item_trashbin">Tệp tin đã bị xóa</string>
     <string name="drawer_item_uploads_list">Tải lên</string>
     <string name="drawer_logout">Đăng xuất</string>
     <string name="drawer_open">Mở thanh bên</string>
@@ -293,6 +294,7 @@
     <string name="failed_to_start_editor">Không khởi động được trình chỉnh sửa</string>
     <string name="failed_update_ui">Cập nhật giao diện người dùng thất bại</string>
     <string name="favorite">Thêm vào ưa thích</string>
+    <string name="unset_favorite">Xoá khỏi ưa thích</string>
     <string name="favorite_icon">Ưa thích</string>
     <string name="file_already_exists">Tập tin đã tồn tại</string>
     <string name="file_delete">Xóa</string>
@@ -591,6 +593,7 @@
     <string name="restore_selected">Khôi phục mục đã chọn</string>
     <string name="retrieving_file">Đang truy xuất tệp…</string>
     <string name="retry">Thử lại</string>
+    <string name="pin_home">Đính trên màn Trang chủ</string>
     <string name="richdocuments_failed_to_load_document">Không tải được tài liệu!</string>
     <string name="scanQR_description">Đăng nhập qua mã QR</string>
     <string name="screenshot_01_gridView_heading">Bảo vệ dữ liệu của bạn</string>
