@@ -100,6 +100,8 @@ public abstract class ToolbarActivity extends BaseActivity implements Injectable
         mPreviewImageContainer = findViewById(R.id.preview_image_frame);
 
         mToolbarSpinner = findViewById(R.id.toolbar_spinner);
+
+        viewThemeUtils.material.themeToolbar(mToolbar);
     }
 
     public void setupToolbarShowOnlyMenuButtonAndTitle(String title, View.OnClickListener toggleDrawer) {
@@ -289,6 +291,7 @@ public abstract class ToolbarActivity extends BaseActivity implements Injectable
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setSubtitle(subtitle);
+            viewThemeUtils.androidx.themeActionBarSubtitle(this, actionBar);
         }
     }
 
